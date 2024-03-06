@@ -3,7 +3,9 @@
 /// Modify the function `gcd` in such a way that the function computes the
 /// greatest common divisor of two 32-bit integers.
 let gcd a b =
-  0
+  if a = 0 then b 
+  elif b = 0 then a
+  else gcd(b, a mod b)
 
 gcd 360 210
 |> printfn "%d"
