@@ -5,7 +5,7 @@
 let gcd a b =
   if a = 0 then b 
   elif b = 0 then a
-  else gcd(b, a mod b)
+  else gcd(b, a % b)
 
 gcd 360 210
 |> printfn "%d"
