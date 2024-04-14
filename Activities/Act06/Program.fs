@@ -12,11 +12,17 @@ let cdr lst =
 
 /// Modify this function to return the last element of the given list.
 let last lst =
-  failwith "Implement"
+  match lst with
+    | [] -> failwith "no last element"
+    | [x] -> x
+    | _ :: tail -> lastElement tail
 
 /// Modify this function to return the last but one element of the given list.
 let lastButOne lst =
-  failwith "Implement"
+  match lst with
+    | [] | [_] -> failwith "fewer than two elements"
+    | [x; _] -> x
+    | _ :: tail -> secondLastElement tail
 
 printfn "last element: %d" <| last [ 1; 2; 3; 4; 5 ]
 printfn "last element: %d" <| last [ "a"; "bcd"; "efg" ]
